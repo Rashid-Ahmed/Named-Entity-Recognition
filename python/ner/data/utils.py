@@ -39,4 +39,5 @@ def tokenize_and_align_labels(
             previous_word_idx = word_idx
         labels.append(label_ids)
     tokenized_inputs["labels"] = labels
+
     return tokenized_inputs

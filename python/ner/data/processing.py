@@ -9,21 +9,10 @@ def load_data(config: Config):
     train_dataset = dataset["train"]
     validation_dataset = dataset["validation"]
 
+    train_dataset = train_dataset.remove_columns("fine_ner_tags")
+    validation_dataset = validation_dataset.remove_columns("fine_ner_tags")
+
     return train_dataset, validation_dataset
-
-
-def tokenize_data(examples, tokenizer, config: Config):
-    de_examples = []
-    en_examples = []
-    prefix = "translate German to English: "
-    for ex in examples:
-        de_examples.append(prefix + ex['de'])
-        en_examples.append(ex['en'])
-
-    tokenized_examples = tokenizer(de_examples, text_target=en_examples, max_length=config.data.max_token_length,
-                                   truncation=True,
-                                   padding=config.data.pad_to_max_length)
-    return tokenized_examples
 
 
 def dataset_to_tf(train_dataset, validation_dataset, tokenizer, config, model):
