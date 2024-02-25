@@ -1,6 +1,6 @@
 # Named Entity Recognition 
 
-This is a Github repository to train Named Entity Recognition models. 
+This is a Github repository to finetune Named Entity Recognition models. 
 
 ## Usage
 
@@ -19,6 +19,6 @@ DeBERTa v3 large model is used in this project.
 
 ## Dataset
 
-The NER model is trained on the few-nerd dataset from DFKI. The repository could be used with any NER dataset with small changes.
+The NER model is finetuned on the few-nerd dataset from DFKI. The repository could be used with any NER dataset with small changes.
 The Token labels are Person, Organisation, Location, Building, Event, Product, Art & Misc.
 
